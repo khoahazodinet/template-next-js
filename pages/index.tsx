@@ -10,6 +10,7 @@ const Home: NextPageWithLayout = () => {
     console.log(state)
   }, [state])
 
+
   return (
     <div className={styles.container}>
       <h1>main page</h1>

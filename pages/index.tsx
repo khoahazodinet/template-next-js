@@ -5,12 +5,11 @@ import {
 } from '@/models/index'
 import React, { ChangeEvent } from 'react'
 import styles from '@/styles/Home.module.scss'
-import MainLayout from '@/components/layout/main'
 import { calculatorApi } from '../api-client'
 import CalculatorInputPage from '@/components/common/CalculatorInput'
 import CalculatorOutputPage from '@/components/common/CalculatorOutput'
 
-const Home: NextPageWithLayout = () => {
+const Home: NextPageWithLayout = ()  => {
   const [data, setData] = React.useState<CalculatorInput>({
     bill: 0,
     billErr: false,
@@ -53,6 +52,8 @@ const Home: NextPageWithLayout = () => {
   const isValidateTrue = () => {
     return (data.billErr || data.personCountErr)
   }
+
+
 
   const handleSubmit = () => {
     setError()

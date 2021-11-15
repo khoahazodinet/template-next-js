@@ -12,6 +12,11 @@ export interface CalculatorInputProps{
   handleCustomAvailable: (isCustomAvailable: boolean)=>void
 }
 
+export interface ITipSelect{
+  name: string,
+  value: number
+}
+
 const CalculatorInputPage = (props : CalculatorInputProps)=>{
   const {
     handleChange,
@@ -21,7 +26,7 @@ const CalculatorInputPage = (props : CalculatorInputProps)=>{
     handleCustomAvailable
   } = props;
 
-  const tipSelection = [
+  const tipSelection: ITipSelect[] = [
     {
       name: '5%',
       value: 5

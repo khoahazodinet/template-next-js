@@ -1,6 +1,5 @@
 import React, { ChangeEvent } from 'react'
 import { CalculatorInput } from '@/models/comon'
-import styles from '@/components/common/CalculatorInput/styles.module.scss'
 import dollar from '@/public/icon-dollar.svg'
 import person from '@/public/icon-person.svg'
 import Image from 'next/image'
@@ -52,19 +51,19 @@ const CalculatorInputPage = (props: CalculatorInputProps) => {
 
   const checkTip: (item: ITipSelect)=> string  = (item) => {
     if(data.isCustomAvailable) return '';
-    if(parseFloat(data.tip as string)===item.value) return styles.isChecked;
+    if(parseFloat(data.tip as string)===item.value) return 'isChecked';
     return '';
   }
 
   return (
-    <div className={styles.content + ' ' + styles.contentLeft}>
-      <div className={styles.bill}>
+    <div className={'content' + ' ' + 'contentLeft'}>
+      <div className={'bill'}>
         <label htmlFor='billInput'>Bill</label>
         &nbsp;&nbsp;
-        <span className={styles.error} id='bill-error'>
+        <span className={'error'} id='bill-error'>
           {data.billErr && data.billErrText}
         </span>
-        <div className={styles.bill__input}>
+        <div className={'bill__input'}>
           <Image src={dollar} alt="dollar-icon" />
           <input type='text' id='billInput'
                  onChange={handleChange}
@@ -73,48 +72,48 @@ const CalculatorInputPage = (props: CalculatorInputProps) => {
                  value={data.bill} name='bill' />
         </div>
       </div>
-      <div className={styles.tip}>
+      <div className={'tip'}>
         <label>
           Select Tip % &nbsp;&nbsp;
-          <span className={styles.error} id='tip-error'>
+          <span className={'error'} id='tip-error'>
             {data.tipErr && data.tipErrText}
           </span>
         </label>
-        <div className={styles.items}>
+        <div className={'items'}>
           {tipSelection.map((item, key) => (
-            <div className={styles.item} key={key}>
-              <label className={styles.containerInput}>
+            <div className={'item'} key={key}>
+              <label className={'containerInput'}>
                 <input type='radio' name='tip' onChange={handleChange} value={item.value} />
-                <span className={styles.checkmark + ' ' + checkTip(item)}
+                <span className={'checkmark' + ' ' + checkTip(item)}
                       onClick={() => handleCustomAvailable(false)}
                 >{item.name}</span>
               </label>
             </div>
           ))}
 
-          <div className={styles.item} onClick={() => handleCustomAvailable(true)}>
+          <div className={'item'} onClick={() => handleCustomAvailable(true)}>
             {data.isCustomAvailable ?
               (<input
                 value={data.tip}
                 autoFocus={data.isCustomAvailable}
                 onFocus={handleFocus} onBlur={handleBlur}
-                type='text' className={styles.inputCustom} name='tip'
+                type='text' className={'inputCustom'} name='tip'
                 onChange={(e) => handleChange(e)} />) :
-              (<div className={styles.custom}>
+              (<div className={'custom'}>
                 Custom
               </div>)
             }
           </div>
         </div>
       </div>
-      <div className={styles.count__number}>
+      <div className={'count__number'}>
         <label htmlFor='count-number'>
           Number of People &nbsp;&nbsp;
-          <span className={styles.error} id='person-count-error'>
+          <span className={'error'} id='person-count-error'>
             {data.personCountErr && data.personCountErrText}
           </span>
         </label>
-        <div className={styles.count__number__input}>
+        <div className={'count__number__input'}>
           <Image src={person} alt="person-icon"/>
           <input id='count-number' type='text'
                  onChange={handleChange}

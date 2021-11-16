@@ -1,4 +1,9 @@
 import '../styles/globals.css'
+
+import '@/styles/Home.scss'
+import '@/styles/common/calculatorInputStyles.scss'
+import '@/styles/common/calculatorOuputStyles.scss'
+
 import EmptyLayout from '@/components/layout/empty'
 import { AppPropsWithLayout } from '@/models/comon'
 

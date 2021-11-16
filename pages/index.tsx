@@ -4,7 +4,6 @@ import {
   NextPageWithLayout,
 } from '@/models/index'
 import React, { ChangeEvent } from 'react'
-import styles from '@/styles/Home.module.scss'
 import { calculatorApi } from '../api-client'
 import CalculatorInputPage from '@/components/common/CalculatorInput'
 import CalculatorOutputPage from '@/components/common/CalculatorOutput'
@@ -172,13 +171,13 @@ const Home: NextPageWithLayout = () => {
   }
 
   return (
-    <div className={styles.homePage}>
-      <section className={styles.mainContainer}>
+    <div className='homePage'>
+      <section className={'mainContainer'}>
         {/*logo*/}
         <h3 style={{ color: 'red', marginTop: '20px' }}
         >{data.fetchResponseErrText}</h3>
         <div id='form-submit'
-             className={styles.calculator}
+             className={'calculator'}
         >
           {/*content left*/}
           <CalculatorInputPage handleChange={handleChange}

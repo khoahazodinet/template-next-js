@@ -1,5 +1,4 @@
 import React, { ChangeEvent } from 'react'
-import styles from './styles.module.scss'
 
 import { CalculatorInput, CalculatorOutput } from '@/models/comon'
 export interface CalculatorInputProps{
@@ -18,10 +17,10 @@ const CalculatorOutputPage = (props: CalculatorInputProps)=>{
   } = props
 
   return(
-    <div className={styles.content + ' ' + styles.contentRight}>
-      <div className={styles.contentBox}>
-        <div className={styles.item + ' ' +styles.tipAmount}>
-          <div className={styles.label}>
+    <div className={'content' + ' ' + 'contentRight'}>
+      <div className={'contentBox'}>
+        <div className={'item' + ' ' + 'tipAmount'}>
+          <div className={'label'}>
             <h1>
               Tip Amount
             </h1>
@@ -29,14 +28,14 @@ const CalculatorOutputPage = (props: CalculatorInputProps)=>{
               / person
             </span>
           </div>
-          <div className={styles.result}>
+          <div className={'result'}>
             <h2 id="amount-result">
               {result.amount}
             </h2>
           </div>
         </div>
-        <div className={styles.item + ' ' + styles.total}>
-          <div className={styles.label}>
+        <div className={'item' + ' ' + 'total'}>
+          <div className={'label'}>
             <h1>
               Total
             </h1>
@@ -44,17 +43,17 @@ const CalculatorOutputPage = (props: CalculatorInputProps)=>{
                   / person
                 </span>
           </div>
-          <div className={styles.result}>
+          <div className={'result'}>
             <h2 id="total-result">
               {result.total}
             </h2>
           </div>
         </div>
       </div>
-      <div className={styles.buttonFooter}>
+      <div className={'buttonFooter'}>
         <button
           disabled={result.isFetching}
-          className={result.isFetching ? styles.btnDisabled : ''}
+          className={result.isFetching ? 'btnDisabled' : ''}
           onClick={handleSubmit}
           id="submit-button">SUBMIT
         </button>
@@ -67,7 +66,7 @@ const CalculatorOutputPage = (props: CalculatorInputProps)=>{
             `${( result.isFetching
               || ((data.bill === 0 || data.bill === '') &&
                 (data.personCount===0 || data.personCount==='')
-              )) && styles.btnDisabled}`
+              )) && 'btnDisabled'}`
           }
           onClick={handleReset} type="button">RESET
         </button>

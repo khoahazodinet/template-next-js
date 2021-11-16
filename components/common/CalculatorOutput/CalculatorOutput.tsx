@@ -63,16 +63,11 @@ const CalculatorOutputPage = (props: CalculatorInputProps)=>{
             (result.isFetching
             )
           }
-          className={` ${styles.reset}  
-            ${
-            ( result.isFetching
-              || (
-                (data.bill === 0 || data.bill === '') &&
+          className={
+            `${( result.isFetching
+              || ((data.bill === 0 || data.bill === '') &&
                 (data.personCount===0 || data.personCount==='')
-              )
-            )
-            && styles.btnDisabled
-          }`
+              )) && styles.btnDisabled}`
           }
           onClick={handleReset} type="button">RESET
         </button>

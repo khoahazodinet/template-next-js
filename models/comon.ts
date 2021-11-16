@@ -3,15 +3,15 @@ import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 
 export interface CalculatorInput {
-  bill: number | '',
+  bill: number | string,
   billErr: boolean,
   billErrText: string,
 
-  tip: number | '',
+  tip: number | string,
   tipErr: boolean,
   tipErrText: string,
 
-  personCount: number | '',
+  personCount: number | string,
   personCountErr: boolean,
   personCountErrText: string,
 
